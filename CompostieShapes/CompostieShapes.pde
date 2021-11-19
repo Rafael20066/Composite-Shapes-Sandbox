@@ -8,17 +8,13 @@ float noseX1, noseY1, noseX2, noseY2, noseX3, noseY3;
 float mouthX1, mouthY1, mouthX2, mouthY2;
 float mouthThick, reset;
 float measleX, measleY, measleDiameter;
-color measlesColour=#FF030B, resetColour=#FFFFFF;
+color measlesColour= #0000FF, resetColour=#FFFFFF;
 //
 void setup() {
   //Geometry
   size(700, 500);
   //
   //Population
-  rectX = width*1/2 - height*1/2;
-  rectY = height * 0;
-  rectWidth = height;
-  rectHeight = height;
   faceX = width*1/2;
   faceY = height*1/2;
   faceDiameter = height; //smallest dimension
@@ -38,19 +34,18 @@ void setup() {
   mouthX2 = rightEyeX;
   mouthY2 = mouthY1;
   mouthThick = 15;
-  reset = 1;
+  reset = 10;
+  ellipse(faceX, faceY, faceDiameter, faceDiameter);
   //
 }//End setup()
 //
 void draw() {
   //Population that changes
-  measleX = random(width);
-  measleY = random(height);
-  measleDiameter = random(width*1/30, width*1/10);
+  measleX = 5/30*(width);
+  measleY = 5/16*(height);
+  measleDiameter = random(width*2/30, width*2/10);
   //
   //Canvas
-  rect(rectX, rectY, rectWidth, rectHeight);
-  ellipse(faceX, faceY, faceDiameter, faceDiameter);
   ellipse(leftEyeX, leftEyeY, eyeDiameter, eyeDiameter);
   ellipse(rightEyeX, rightEyeY, eyeDiameter, eyeDiameter);
   triangle(noseX1, noseY1, noseX2, noseY2, noseX3, noseY3);
